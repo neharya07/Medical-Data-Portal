@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
 
   get '/login', to: 'sessions#new'
 
@@ -9,9 +8,6 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
 
-  root 'welcome#index'
-
- 
   resources :patients
 
   resources :doctors do

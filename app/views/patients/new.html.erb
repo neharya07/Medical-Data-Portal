@@ -1,26 +1,83 @@
-<h2>Add New Patient</h2>
-<%= form_with(model: @patient, local: true) do |form| %>
-  <div>
-    <%= form.label :Name %>
-    <%= form.text_field :Name %>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Patient</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .form-container {
+      max-width: 400px;
+      margin: 20vh auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    input[type="submit"] {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Add New Patient</h2>
+    <%= form_with(model: @patient, local: true) do |form| %>
+      <div class="form-group">
+        <%= form.label :Name %>
+        <%= form.text_field :Name %>
+      </div>
+      <div class="form-group">
+        <%= form.label :Age %>
+        <%= form.text_field :Age %>
+      </div>
+      <div class="form-group">
+        <%= form.label :Gender %>
+        <%= form.text_field :Gender %>
+      </div>
+      <div class="form-group">
+        <%= form.label :Contact %>
+        <%= form.text_field :Contact %>
+      </div>
+      <div class="form-group">
+        <%= form.label :Visited_at %>
+        <%= form.text_field :Visited_at %>
+      </div>
+      <div class="form-group">
+        <%= form.submit "Create Patient" %>
+      </div>
+    <% end %>
   </div>
-  <div>
-    <%= form.label :Age %>
-    <%= form.text_field :Age %>
-  </div>
-  <div>
-    <%= form.label :Gender %>
-    <%= form.text_field :Gender %>
-  </div>
-  <div>
-    <%= form.label :Contact %>
-    <%= form.text_field :Contact %>
-  </div>
-  <div>
-    <%= form.label :Visited_at %>
-    <%= form.text_field :Visited_at %>
-  </div>
-  <div>
-    <%= form.submit "Create Patient" %>
-  </div>
-<% end %>
+</body>
+</html>
