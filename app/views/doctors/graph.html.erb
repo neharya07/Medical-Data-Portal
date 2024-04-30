@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Bar Chart</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <canvas id="bar-chart" width="800" height="400"></canvas>
+
+  <script>
+    var labels = <%= raw @patients_count_by_day.keys.to_json %>;
+    var data = <%= raw @patients_count_by_day.values.to_json %>;
+
+    var chartData = {
+      labels: labels,
+      datasets: [{
+        label: 'Number of Patients Registered',
+        data: data,
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1
+      }]
+    };
+
+    var options = {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    };
+
+    var ctx = document.getElementById('bar-chart').getContext('2d');
+
+    var barChart = new Chart(ctx, {
+      type: 'bar',
+      data: chartData,
+      options: options
+    });
+  </script>
+</body>
+</html>

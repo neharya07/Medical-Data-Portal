@@ -1,0 +1,26 @@
+<h2>Edit Patient List</h2>
+<%= form_with(model: @patient, local: true) do |form| %>
+  <div>
+    <%= form.label :Name %>
+    <%= form.text_field :Name %>
+  </div>
+  <div>
+    <%= form.label :Age %>
+    <%= form.text_field :Age %>
+  </div>
+  <div>
+    <%= form.label :Gender %>
+    <%= form.text_field :Gender %>
+  </div>
+  <div>
+    <%= form.label :Contact %>
+    <%= form.text_field :Contact %>
+  </div>
+  <div>
+    <%= form.label :Visited_at %>
+    <%= form.text_field :Visited_at %>
+  </div>
+  <div>
+    <%= form.submit "Update" %>
+  </div>
+<% end %>

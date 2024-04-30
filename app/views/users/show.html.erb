@@ -1,0 +1,22 @@
+<div class="container welcome-container">
+  <% if current_user.receptionist? %>
+    <h1 class="welcome-heading"><%= current_user.welcome %></h1>
+    <nav class="welcome-nav">
+      <%= link_to "Add New Patient", controller: "patients", action: "new", class: "btn btn-success btn-lg" %>
+      <div>
+      <%= link_to "List of Patients", controller: "patients", action: "show", class: "btn btn-primary btn-lg" %>
+      </div>
+    </nav>
+  <% elsif current_user.doctor? %>
+    <h1 class="welcome-heading"><%= current_user.welcome %></h1>
+    <nav class="welcome-nav">
+      <%= link_to "Registered Patients", controller: "doctors", action: "show", class: "btn btn-primary btn-lg" %>
+      <div>
+      <%= link_to "Graph", controller: "doctors", action: "graph", class: "btn btn-primary btn-lg" %>
+      </div>
+    </nav>
+  <% end %>
+  <div class="sign-out">
+    <%= button_to "Sign out", logout_path, method: :delete, class: "btn btn-danger btn-lg" %>
+  </div>
+</div>

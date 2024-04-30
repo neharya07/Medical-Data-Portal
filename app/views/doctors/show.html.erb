@@ -1,0 +1,25 @@
+<h1>Registered Patients List</h1>
+<div class="patient-list">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Contact</th>
+        <th>Visited At</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @patients.each do |patient| %>
+        <tr>
+          <td><%= patient.Name %></td>
+          <td><%= patient.Age %></td>
+          <td><%= patient.Gender %></td>
+          <td><%= patient.Contact %></td>
+          <td><%= patient.Visited_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

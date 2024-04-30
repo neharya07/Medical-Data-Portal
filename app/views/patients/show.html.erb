@@ -1,0 +1,28 @@
+
+<h2>Registered Patients</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Contact</th>
+      <th>Visited at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @patients.each do |patient| %>
+      <tr>
+        <td><%= patient.Name %></td>
+        <td><%= patient.Age %></td>
+        <td><%= patient.Gender %></td>
+        <td><%= patient.Contact %></td>
+        <td><%= patient.Visited_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_patient_path(patient) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
