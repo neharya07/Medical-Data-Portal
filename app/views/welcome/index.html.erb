@@ -1,17 +1,58 @@
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+      margin-top: 20vh;
+    }
+    h1 {
+      color: #333;
+    }
+    p {
+      color: #666;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    a {
+      display: block;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    a:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
-
-  <h1>Welcome to the Medical Data Portal</h1>
-  
-  <p>Click below to log in:</p>
-  
-  <ul>
-    <li><%= link_to "Receptionist Login", new_user_session_path %></li>
-    <li><%= link_to "Doctor Login", new_user_session_path %></li>
-  </ul>
-
+  <div class="container">
+    <h1>Welcome to the Medical Data Portal</h1>
+    
+    <p>Click below to log in:</p>
+    
+    <ul>
+      <li><%= link_to "Receptionist Login", login_path %></li>
+      <li><%= link_to "Doctor Login", login_path %></li>
+    </ul>
+  </div>
 </body>
 </html>
